@@ -124,7 +124,6 @@ class EncoderText(nn.Module):
     def forward(self, captions, lengths):
         """Handles variable size captions"""
         # embed word ids to vectors
-        # print(captions.shape)
         cap_emb = self.embed(captions)
         cap_emb = self.dropout(cap_emb)
 
@@ -136,9 +135,7 @@ class EncoderText(nn.Module):
 
         # reshape output to (batch_size, hidden_size)
         cap_emb, _ = pad_packed_sequence(out, batch_first=True)
-
         
-
         if self.use_bi_gru:
             cap_emb = (cap_emb[:, :, :cap_emb.size(2)//2] + cap_emb[:, :, cap_emb.size(2)//2:])/2
 
