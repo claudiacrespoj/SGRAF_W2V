@@ -7,15 +7,15 @@ def parse_opt():
     # Hyper Parameters
     parser = argparse.ArgumentParser()
     # --------------------------- data path -------------------------#
-    parser.add_argument('--data_path', default='C:/Users/claud/Documents/GitHub/SGRAF/data',
+    parser.add_argument('--data_path', default='C:/Users/claud/Documents/GitHub/SGRAF_W2V/data',
                         help='path to datasets')
     parser.add_argument('--data_name', default='f30k_precomp',
                         help='{coco,f30k}_precomp')
-    parser.add_argument('--vocab_path', default='C:/Users/claud/Documents/GitHub/SGRAF/vocab',
+    parser.add_argument('--vocab_path', default='C:/Users/claud/Documents/GitHub/SGRAF_W2V/vocab',
                         help='Path to saved vocabulary json files.')
-    parser.add_argument('--model_name', default='C:/Users/claud/Documents/GitHub/SGRAF/runs/checkpoint',
+    parser.add_argument('--model_name', default='C:/Users/claud/Documents/GitHub/SGRAF_W2V/runs/checkpoint',
                         help='Path to save the model.')
-    parser.add_argument('--logger_name', default='C:/Users/claud/Documents/GitHub/SGRAF/runs/logs',
+    parser.add_argument('--logger_name', default='C:/Users/claud/Documents/GitHub/SGRAF_W2V/runs/logs',
                         help='Path to save Tensorboard log.')
 
     # ----------------------- training setting ----------------------#
@@ -65,7 +65,7 @@ def parse_opt():
                         help='Step of the SGR.')
     # ------------------------- model setting -----------------------#
     parser.add_argument('--im_path', default=3, type=str,
-                        help="C:/Users/claud/Documents/GitHub/SGRAF/runs/logs")
+                        help="C:/Users/claud/Documents/GitHub/SGRAF_W2V/runs/logs")
     opt = parser.parse_args()
     print(opt)
     return opt

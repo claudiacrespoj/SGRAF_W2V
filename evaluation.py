@@ -142,16 +142,7 @@ def evalrank(model_path, data_path=None, split='dev', fold5=False):
     img_embs, cap_embs, cap_lens = encode_data(model, data_loader)
     print('Images: %d, Captions: %d' %
     (img_embs.shape[0] / 5, cap_embs.shape[0]))
-    
  
-    # w, h = 512, 512
-    # img = Image.fromarray(data_loader.dataset.images[0], 'RGB')
-    # img.save('my.png')
-    # img.show()
-
-    # print(data_loader.dataset.captions[0])
-
-    # plt.show()
     if not fold5:
         # no cross-validation, full evaluation
         img_embs = np.array([img_embs[i] for i in range(0, len(img_embs), 5)])
@@ -271,7 +262,7 @@ def i2t(images, captions, caplens, sims, npts=None, return_ranks=False):
     npts = images.shape[0]
     ranks = np.zeros(npts)
     top1 = np.zeros(npts)
-
+    print(sims)
     for index in range(npts):
         inds = np.argsort(sims[index])[::-1]
 

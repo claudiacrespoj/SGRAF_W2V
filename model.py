@@ -118,9 +118,7 @@ class EncoderText(nn.Module):
         rows, cols = embeddings.shape
         self.embedding = torch.nn.Embedding(num_embeddings=rows, embedding_dim=cols)
         self.embedding.weight = torch.nn.Parameter(embeddings)
-        # embedding.weight.requires_grad = not freeze
-        # return embedding
-
+        
     def forward(self, captions, lengths):
         """Handles variable size captions"""
         # embed word ids to vectors
