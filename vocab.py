@@ -140,9 +140,10 @@ def word2vec(data_path,data_name,caption_file):
 
 
 
-def main(data_path, data_name):
-    # word2vec(data_path, data_name, caption_file=annotations)
+def main(data_path, data_name,w2vec):
     vocab = build_vocab(data_path, data_name, caption_file=annotations, threshold=4)
+    if w2vec:
+        word2vec(data_path, data_name, caption_file=annotations)
     serialize_vocab(vocab, './vocab/%s_vocab.json' % data_name)
     print("Saved vocabulary file to ", './vocab/%s_vocab.json' % data_name)
 
@@ -152,6 +153,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_path', default='data')
     parser.add_argument('--data_name', default='f30k_precomp',
-                        help='{coco,f30k}_precomp')
+                        help='f30k_precomp')
+    parser.add_argument('--w2vec', default=False,
+                        help='train w2vec model')                    
     opt = parser.parse_args()
-    main(opt.data_path, opt.data_name)
+    main(opt.data_path, opt.data_name,opt.w2vec)

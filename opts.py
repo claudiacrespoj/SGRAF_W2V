@@ -66,6 +66,9 @@ def parse_opt():
     # ------------------------- model setting -----------------------#
     parser.add_argument('--im_path', default=3, type=str,
                         help="C:/Users/claud/Documents/GitHub/SGRAF_W2V/runs/logs")
+     # -------------------------w2vec -----------------------#
+    parser.add_argument('--w2vec', default=False,
+                        help='train w2vec model')                     
     opt = parser.parse_args()
     print(opt)
     return opt

@@ -228,28 +228,6 @@ def shard_attn_scores(model, img_embs, cap_embs, cap_lens, opt, shard_size=100):
     sys.stdout.write('\n')
     return sims
 
-from model import SCAN_attention
-def captions(model, img_embs, cap_embs, cap_lens, data_loader,vocab, shard_size=100):
-    n_im_shard = (len(img_embs) - 1) // shard_size + 1
-    n_cap_shard = (len(cap_embs) - 1) // shard_size + 1
-
-    sims = np.zeros((len(img_embs), len(cap_embs)))
-    for i in range(n_im_shard):
-        im_start, im_end = shard_size * i, min(shard_size * (i + 1), len(img_embs))
-        for j in range(n_cap_shard):
-            sys.stdout.write('\r>> shard_attn_scores batch (%d,%d)' % (i, j))
-            ca_start, ca_end = shard_size * j, min(shard_size * (j + 1), len(cap_embs))
-
-            with torch.no_grad():
-                im = torch.from_numpy(img_embs[im_start:im_end]).float().cuda()
-                ca = torch.from_numpy(cap_embs[ca_start:ca_end]).float().cuda()
-                l = cap_lens[ca_start:ca_end]
-                # sim = model.forward_emb(im, ca, l)
-
-            weight = SCAN_attention(ca, im, smooth= 9.0, eps=1e-8)
-            visualize_att("./data/test_data/10002456.jpg", data_loader.dataset.captions[j], weight, vocab, smooth=True)
-            print()
-            sys.stdout.write('\n')
 
 def i2t(images, captions, caplens, sims, npts=None, return_ranks=False):
     """
@@ -361,7 +339,5 @@ def visualize_att(image_path, seq, alphas, rev_word_map, smooth=True):
     plt.show()
 
 if __name__ == '__main__':
-    # predict("./runs/model_best.pth.tar",
-            #  split="test", query = "dog running",image_path= './data/test_data/10002456.jpg' )
-    evalrank("./runs/test runs/checkpoint_79.pth.tar",
+       evalrank("./runs/test runs/checkpoint_79.pth.tar",
              data_path='./data', split="test", fold5=False)
