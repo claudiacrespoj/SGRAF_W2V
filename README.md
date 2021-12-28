@@ -19,8 +19,8 @@ To run the code in your local we recommend  **python 3.6**.
 ## Download data and vocab
 We follow [SCAN](https://github.com/kuanghuei/SCAN) to obtain image features, proccessed vobularies with gensim can be download from GDrive link, to train please place all files in data folder
 
-* The preprocessed training images here 
-The preprocessed test images [here](https://drive.google.com/file/d/18zTyLNt6Zu0iVQObnAQcJ9_ygkkZh8lf/view?usp=sharing)
+* The preprocessed training images [here]() 
+* The preprocessed test images [here](https://drive.google.com/file/d/18zTyLNt6Zu0iVQObnAQcJ9_ygkkZh8lf/view?usp=sharing)
 
 * The pretrained word2vec model can be download from [here](https://drive.google.com/file/d/1okujwj6TlOUypavjSgQN0lNx_lNZfop5/view?usp=sharing)
 
@@ -51,4 +51,14 @@ to train your own word2vec model
 (For SGR) python vocab.py --w2vec True
 ```
 
+## Google Colab notebook
+A pre-exectued notebook of the envaluation and vocabulary can be found in the following link
+```bash
+https://colab.research.google.com/drive/1tXYCZRuGev_VmlKd-Ptt2orlRKjDodYz?usp=sharing
+```
+---
+**NOTE**
 
+for any issues downloading files and models please contact ccrespojulio@ryerson.ca
+
+---
