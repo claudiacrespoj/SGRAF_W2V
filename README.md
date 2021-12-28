@@ -1,29 +1,25 @@
 # SGRAF_W2V
 *Python 3.6 and pytorch implementation of paper paper of [**“Similarity Reasoning and Filtration for Image-Text Matching”**](https://arxiv.org/pdf/2101.01368.pdf).*  with an added embedding layer 
 
-*the authors of the original paper build the code based of [SCAN](https://github.com/kuanghuei/SCAN) and [Cross-modal_Retrieval_Tutorial](https://github.com/Paranioar/Cross-modal_Retrieval_Tutorial).* 
+*the authors of the original paper build the code based of [SCAN](https://github.com/kuanghuei/SCAN) 
 
 
 ## Introduction
 
-**The framework of SGRAF:**
+**The framework of SGRAF with an added embedding layer:**
 
 <img src="./fig/model.png" width = "100%" height="50%">
 
 ## Requirements 
-We recommended the following dependencies for ***Branch `python3.6`***.
-
-*  Python 3.6  
-*  pytorch>=1.9.0 
-*  torchvision==0.10.0 
-*  cudatoolkit==10.2  
-*  NumPy >=1.12.1   
-*  Gensim >=4.1.2
+To run the code in your local we recomment  *** `python3.6`***.
+* cd to the directory where requirements.txt is located.
+* activate your virtualenv.
+* run: pip install -r requirements.txt in your shell.
 
 ## Download data and vocab
 We follow [SCAN](https://github.com/kuanghuei/SCAN) to obtain image features, proccessed vobularies with gensim can be download from GDrive link
 
-```bash
+```proccessed image and captions
 wget https://scanproject.blob.core.windows.net/scan-data/data.zip
 wget https://scanproject.blob.core.windows.net/scan-data/vocab.zip
 ```
