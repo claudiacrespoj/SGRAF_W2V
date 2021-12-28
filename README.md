@@ -32,6 +32,9 @@ We follow [SCAN](https://github.com/kuanghuei/SCAN) to obtain image features, pr
 the pretrained SGRAF model can be downloaded from [here](https://drive.google.com/file/d/1rn4oQmXJpPwzYbvui4WsXMfjv1TvP1xH/view?usp=sharing)
 Modify the **model_path**, **data_path**, **vocab_path** in the `evaluation.py` file. Then run `evaluation.py`:
 
+Pretrained models can be download 
+ * [SGRAF](https://drive.google.com/file/d/1rn4oQmXJpPwzYbvui4WsXMfjv1TvP1xH/view?usp=sharing) 
+ * [SAF](https://drive.google.com/file/d/1-FjegTHTeOoHDFR15_l1ycevD5TuWQqR/view?usp=sharing)
 ```bash
 python evaluation.py
 ```
