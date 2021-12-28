@@ -52,13 +52,14 @@ to train your own word2vec model
 ```
 
 ## Google Colab notebook
-A pre-exectued notebook of the envaluation and vocabulary can be found in the following link
+A pre-exectued Google Colab notebook of the evaluation and vocabulary can be found in the following link
 ```bash
 https://colab.research.google.com/drive/1tXYCZRuGev_VmlKd-Ptt2orlRKjDodYz?usp=sharing
 ```
 ---
 **NOTE**
 
+In order to execute the google collab notebook independetly you must create a data folder in your drive and mount it.
 for any issues downloading files and models please contact ccrespojulio@ryerson.ca
 
 ---
